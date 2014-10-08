@@ -1,0 +1,21 @@
+{
+    "name": "hn-php",
+    "description": "HackerNews PHP Client",
+    "keywords": ["hackernews", "hn"],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "4.*"
+    },
+    "autoload": {
+         "psr-4": {
+            "hn\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "hn\\Tests\\": "tests/"
+        }
+    }
+}

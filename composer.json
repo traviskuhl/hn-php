@@ -1,5 +1,5 @@
 {
-    "name": "hn-php",
+    "name": "traviskuhl/hn-php",
     "description": "HackerNews PHP Client",
     "keywords": ["hackernews", "hn"],
     "license": "MIT",

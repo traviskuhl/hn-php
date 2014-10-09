@@ -3,6 +3,13 @@
     "description": "HackerNews PHP Client",
     "keywords": ["hackernews", "hn"],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Travis Kuhl",
+            "email": "travis@kuhl.co",
+            "homepage": "https://github.com/traviskuhl"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
         "ext-json": "*",

@@ -9,7 +9,7 @@ use GuzzleHttp\Subscriber\Mock,
     GuzzleHttp\Stream\Stream
 ;
 
-
+date_default_timezone_set("UTC");
 
 
 class Test extends \PHPUnit_Framework_TestCase {

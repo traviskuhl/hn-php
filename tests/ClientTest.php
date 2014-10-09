@@ -43,4 +43,38 @@ class ClientTest extends Test {
         $this->assertInstanceOf('hn\Item\PollOpt', $result);
     }
 
+    public function testUser() {
+        $result = $this
+            ->setMock($this->client, 200, 'user')
+            ->user('test');
+        $this->assertInstanceOf('hn\Item\User', $result);
+    }
+
+    public function testTopStories() {
+        $result = $this
+            ->setMock($this->client, 200, 'top-stories')
+            ->topStories();
+        $this->assertTrue(is_array($result));
+        $this->assertEquals($result[0], 8414149);
+    }
+
+    public function testMaxItem() {
+        $result = $this
+            ->setMock($this->client, 200, 'max-id')
+            ->maxItem();
+        $this->assertEquals($result, 8423374);
+    }
+
+    public function testUpdates() {
+        $result = $this
+            ->setMock($this->client, 200, 'updates')
+            ->updates();
+        $this->assertTrue(is_array($result));
+        $this->assertTrue(array_key_exists('items', $result));
+        $this->assertTrue(array_key_exists('profiles', $result));
+        $this->assertEquals($result['items'][0], 8423305);
+        $this->assertEquals($result['profiles'][0], 'thefox');
+
+    }
+
 }

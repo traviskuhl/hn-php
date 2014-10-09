@@ -23,7 +23,7 @@ class Client extends GuzzleClient {
      * api version to use
      * @var string
      */
-    private $version =  "v0";
+    private $version = "v0";
 
 
     /**
@@ -35,9 +35,8 @@ class Client extends GuzzleClient {
         if ($version) {
             $this->version = $version;
         }
-
         parent::__construct([
-                'base_url' => implode("/", [self::API_BASE_URL, $this->version])
+                'base_url' => implode("/", [self::API_BASE_URL, $this->version, ''])
             ]);
     }
 
@@ -56,7 +55,7 @@ class Client extends GuzzleClient {
                 ->json();
         }
         catch (RequestException $e) {
-            throw new Exception\RequestException();
+            throw new Exception\RequestException($e->getMessage(), $e->getCode());
         }
 
         return $this->response($result);

@@ -2,4 +2,7 @@
 
 namespace hn\Exception;
 
-class RequestException extends \RuntimeException {}
+class RequestException extends \RuntimeException {
+
+
+}
